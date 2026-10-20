@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スケジュール管理アプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>📅 スケジュール帳</h1>
+      <p id="current-date-display"></p>
+    </header>
+
+    <!-- カテゴリー管理エリア -->
+    <select id="category"></select>
+    <section class="category-section">
+      <h2>カテゴリーの追加</h2>
+      <form id="category-form" class="inline-form">
+        <input type="text" id="new-category-name" placeholder="新しいカテゴリー名" required>
+        <button type="submit" class="btn-secondary">カテゴリー追加</button>
+      </form>
+    </section>
+
+    <!-- 予定追加フォーム -->
+    <section class="form-section">
+    <select id="filter-category"></select>
+      <h2>予定の追加</h2>
+      <form id="schedule-form">
+        <div class="form-group">
+          <label for="title">タイトル</label>
+          <input type="text" id="title" placeholder="例: ミーティング、買い出し" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">日付</label>
+            <input type="date" id="date" required>
+          </div>
+          <div class="form-group">
+            <label for="time">時間</label>
+            <input type="time" id="time">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="category">カテゴリー</label>
+          <select id="category">
+            <!-- JSで動的に選択肢を生成 -->
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary">追加する</button>
+      </form>
+    </section>
+
+    <!-- 予定一覧 -->
+    <section class="list-section">
+      <div class="list-header">
+        <h2>予定一覧</h2>
+        <div class="filter-group">
+          <label for="filter-category">絞り込み:</label>
+          <select id="filter-category">
+            <!-- JSで動的に選択肢を生成 -->
+          </select>
+        </div>
+      </div>
+
+      <ul id="schedule-list" class="schedule-list">
+        <!-- JSでここに要素が追加されます -->
+      </ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
